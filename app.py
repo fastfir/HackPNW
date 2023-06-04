@@ -13,17 +13,17 @@ def city():
 @app.route("/log", methods=['POST'])
 def log():
     game.log(request.form['day'], request.form['money'], request.form['size'])
+    return game.calcRep(request.form['score'])
 @app.route("/question")
 def question():
     question = game.questions[random.randrange(len(game.questions))]
     return {
         "question": question
     }
-@app.route("/shop")
+@app.route("/shop", methods=['GET', 'POST'])
 def shop():
-    itemList = []
-    for item in game.items:
-        itemList.append(item)
-    return {
-
-    }
+    if request.method == "GET":
+        return game.items
+    elif request.method == "POST":
+        game.items.pop(request.args.get('bought'))
+        game.bought.append(request.args.get('bought'))
