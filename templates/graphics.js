@@ -10,14 +10,10 @@ window.addEventListener('load', function() {
     ctx.font = "48px sans-serif";
     ctx.fillText("Protesting Game", 420, 140);
 
+    ctx.fillStyle = "black";
+    ctx.fillRect(100, 50, 100, 400);
+
     const img = new Image();
-    img.addEventListener(
-  	"load",
-  () => {
-    // execute drawImage statements here
-  },
-  false
-);
-img.src = "menu button.svg"; // Set source path
+    img.src = "menu.png"; // Set source path
 
 });

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>City Layout</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .city {
+      display: grid;
+      grid-template-columns: repeat(10, 100px);
+      grid-template-rows: repeat(10, 100px);
+      grid-gap: 10px;
+    }
+
+    .building {
+      background-color: gray;
+    }
+
+    .road {
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="city">
+    <div class="building"></div>
+    <div class="road"></div>
+    <div class="building"></div>
+    <div class="building"></div>
+    <div class="building"></div>
+    <div class="building"></div>
+    <div class="road"></div>
+    <div class="road"></div>
+    <div class="building"></
