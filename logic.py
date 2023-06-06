@@ -3,7 +3,7 @@ class Game:
     def __init__(self):
         self.day = 0
         self.money = 0
-        self.protestSize = 1
+        self.size = 1
         self.rep = 0
         self.items = {
             "Bigger Sign": 10,
@@ -14,7 +14,7 @@ class Game:
     def log(self,day,money,size):
         self.day = day
         self.money = money
-        self.protestSize = size
+        self.size = size
     def calcRep(self, score):
         self.rep += score + int(self.size / 5) + (len(self.bought) * 3)
     

@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 import random
-import json
 import logic
 app = Flask(__name__)
 game = logic.Game()
@@ -17,9 +16,7 @@ def log():
 @app.route("/question")
 def question():
     question = game.questions[random.randrange(len(game.questions))]
-    return {
-        "question": question
-    }
+    return { "question": question }
 @app.route("/shop", methods=['GET', 'POST'])
 def shop():
     if request.method == "GET":
@@ -27,3 +24,11 @@ def shop():
     elif request.method == "POST":
         game.items.pop(request.args.get('bought'))
         game.bought.append(request.args.get('bought'))
+@app.route("/eod")
+def eod():
+    return {
+        "Day": game.day,
+        "Money": game.money,
+        "Protesters": game.size,
+        "Items Bought": game.bought
+    }
